@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="route_puppies_list" translatable="false">puppiesList</string>
+    <string name="route_puppy_details" translatable="false">puppyDetails</string>
+    <string name="route_puppy_details_args_uuid" translatable="false">puppyId</string>
+</resources>

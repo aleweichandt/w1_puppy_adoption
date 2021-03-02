@@ -18,11 +18,12 @@ package com.example.androiddevchallenge
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.androiddevchallenge.domain.PuppiesRepository
+import com.example.androiddevchallenge.ui.context.LocalPuppiesRepository
+import com.example.androiddevchallenge.ui.nav.MainStack
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
@@ -39,8 +40,8 @@ class MainActivity : AppCompatActivity() {
 // Start building your app here!
 @Composable
 fun MyApp() {
-    Surface(color = MaterialTheme.colors.background) {
-        Text(text = "Ready... Set... GO!")
+    CompositionLocalProvider(LocalPuppiesRepository provides PuppiesRepository()) {
+        MainStack()
     }
 }
 
