@@ -38,7 +38,8 @@ fun PuppiesListHeader() {
     Column(
         Modifier
             .background(color = MaterialTheme.colors.surface)
-            .padding(8.dp)) {
+            .padding(8.dp)
+    ) {
         Text(text = stringResource(id = R.string.welcome), style = typography.h5)
         Text(
             text = stringResource(id = R.string.welcome_body),

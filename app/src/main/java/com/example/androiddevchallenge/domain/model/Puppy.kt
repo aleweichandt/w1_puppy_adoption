@@ -1,6 +1,6 @@
 package com.example.androiddevchallenge.domain.model
 
-import java.util.*
+import java.util.UUID
 
 data class Puppy(
     val name: String,
