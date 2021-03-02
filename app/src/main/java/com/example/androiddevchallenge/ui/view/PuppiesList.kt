@@ -111,4 +111,3 @@ fun PuppiesListHeader(filter: String, setFilter: (String) -> Unit) {
         )
     }
 }
-

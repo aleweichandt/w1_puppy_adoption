@@ -19,14 +19,14 @@ import com.example.androiddevchallenge.domain.model.Puppy
 
 class PuppiesRepository() {
     private val puppies = listOf(
-    Puppy(
-        "Lassie",
-        2,
-        10.0f,
-        "Collie",
-        "Lassie, a female Rough Collie, was the star of books, a TV series, several movies, and even a radio show. Lassie belonged to the Martin family, frequently spending time with (and saving the life of) young Timmy Martin, who never actually fell in a well.",
-        "https://images.dog.ceo/breeds/collie/n02106030_4592.jpg"
-    ),
+        Puppy(
+            "Lassie",
+            2,
+            10.0f,
+            "Collie",
+            "Lassie, a female Rough Collie, was the star of books, a TV series, several movies, and even a radio show. Lassie belonged to the Martin family, frequently spending time with (and saving the life of) young Timmy Martin, who never actually fell in a well.",
+            "https://images.dog.ceo/breeds/collie/n02106030_4592.jpg"
+        ),
         Puppy(
             "Ren",
             2,
