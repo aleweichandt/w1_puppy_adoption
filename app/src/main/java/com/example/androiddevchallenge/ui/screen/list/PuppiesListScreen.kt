@@ -13,6 +13,7 @@ fun PuppiesListScreen(onPuppySelected: (uuid: String) -> Unit) {
     val puppies = repository.getAll()
     MyTheme {
         Surface(color = MaterialTheme.colors.background) {
+            PuppiesList(puppies = puppies, onPuppySelected = onPuppySelected)
         }
     }
 }

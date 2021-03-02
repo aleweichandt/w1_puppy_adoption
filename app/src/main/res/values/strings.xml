@@ -10,5 +10,10 @@
       the License.
       -->
     <string name="app_name">AndroidDevChallenge</string>
+    <string name="puppy_name">name: %1$s</string>
+    <string name="puppy_image">%1$s image</string>
+    <string name="puppy_description">breed: %1$s - age: %2$s years</string>
     <string name="adopt_me">Adopt me!</string>
+    <string name="error">Error</string>
+    <string name="back">Back</string>
 </resources>
