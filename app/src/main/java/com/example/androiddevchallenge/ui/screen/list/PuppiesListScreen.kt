@@ -1,15 +1,12 @@
 package com.example.androiddevchallenge.ui.screen.list
 
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.domain.model.Puppy
 import com.example.androiddevchallenge.ui.context.LocalPuppiesRepository
@@ -36,7 +33,7 @@ fun PuppiesListScreenBar() {
 
 @Composable
 fun PuppiesListScreenBody(puppies: List<Puppy>, onPuppySelected: (uuid: String) -> Unit) {
-    Surface(modifier = Modifier.padding(16.dp)) {
+    Surface {
         PuppiesList(puppies = puppies, onPuppySelected = onPuppySelected)
     }
 }

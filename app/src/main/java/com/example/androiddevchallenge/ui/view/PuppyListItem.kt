@@ -2,14 +2,11 @@ package com.example.androiddevchallenge.ui.view
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.Button
@@ -30,22 +27,22 @@ import com.example.androiddevchallenge.ui.theme.typography
 fun PuppyListItem(puppy: Puppy?, onPuppySelected: (uuid: String) -> Unit) {
     MyTheme {
         Card(
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
         ) {
             puppy?.run {
-                val name = stringResource(id = R.string.puppy_name, puppy.name)
-                val desc = stringResource(id = R.string.puppy_description, puppy.breed, puppy.age)
+                val breed = stringResource(id = R.string.puppy_description_line_1, puppy.breed)
+                val age = stringResource(id = R.string.puppy_description_line_2, puppy.age)
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(IntrinsicSize.Min)
+                        .wrapContentHeight(Alignment.CenterVertically)
                         .padding(8.dp)
                 ) {
                     PuppyImage(
                         puppy = puppy,
-                        modifier = Modifier
-                            .padding(8.dp)
-                            .size(50.dp)
+                        modifier = Modifier.size(70.dp)
                     )
                     Row(
                         modifier = Modifier
@@ -57,11 +54,11 @@ fun PuppyListItem(puppy: Puppy?, onPuppySelected: (uuid: String) -> Unit) {
                             modifier = Modifier
                                 .weight(1.5f)
                                 .padding(start = 8.dp)
-                                .wrapContentHeight(Alignment.Top)
-                                .width(IntrinsicSize.Max)
+                                .wrapContentSize(Alignment.CenterStart)
                         ) {
-                            Text(text = name, style = typography.body1)
-                            Text(text = desc, style = typography.caption)
+                            Text(text = puppy.name, style = typography.body1)
+                            Text(text = breed, style = typography.caption)
+                            Text(text = age, style = typography.caption)
                         }
                         Box(
                             modifier = Modifier
@@ -84,11 +81,11 @@ fun PuppyListItem(puppy: Puppy?, onPuppySelected: (uuid: String) -> Unit) {
     }
 }
 
-@Preview
+@Preview(heightDp = 70)
 @Composable
 fun ItemWithPuppy() {
     val puppy = Puppy(
-        "Lazzie",
+        "Lassie",
         2,
         10.0f,
         "Beagle",

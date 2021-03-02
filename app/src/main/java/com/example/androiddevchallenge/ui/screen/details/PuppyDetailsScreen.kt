@@ -1,7 +1,7 @@
 package com.example.androiddevchallenge.ui.screen.details
 
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -20,10 +20,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.transform.CircleCropTransformation
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.domain.model.Puppy
 import com.example.androiddevchallenge.ui.context.LocalPuppiesRepository
 import com.example.androiddevchallenge.ui.theme.MyTheme
+import com.example.androiddevchallenge.ui.theme.typography
+import com.example.androiddevchallenge.ui.view.PuppyImage
 
 @Composable
 fun PuppyDetailsScreen(uuid: String?, back: () -> Unit) {
@@ -74,11 +77,47 @@ fun PuppyDetailsScreenBody(puppy: Puppy, onAdopt: () -> Unit) {
                 .padding(16.dp)
                 .fillMaxSize()
         ) {
-            Box(
+            Row {
+                PuppyImage(
+                    puppy = puppy,
+                    modifier = Modifier.weight(1f),
+                    transformation = CircleCropTransformation()
+                )
+                Column(
+                    modifier = Modifier
+                        .padding(start = 8.dp)
+                        .weight(1f)
+                ) {
+                    Text(
+                        text = stringResource(id = R.string.puppy_description_line_1, puppy.breed),
+                        style = typography.body2,
+                    )
+                    Text(
+                        text = stringResource(id = R.string.puppy_description_line_2, puppy.age),
+                        style = typography.body2,
+                        modifier = Modifier.padding(top = 8.dp)
+                    )
+                    Text(
+                        text = stringResource(id = R.string.puppy_description_line_3, puppy.weight),
+                        style = typography.body2,
+                        modifier = Modifier.padding(top = 8.dp)
+                    )
+                }
+            }
+            Column(
                 modifier = Modifier
+                    .padding(top = 8.dp)
                     .weight(1f)
             ) {
-                Text(text = "Details for ${puppy.name}")
+                Text(
+                    text = stringResource(id = R.string.overview),
+                    style = typography.h6
+                )
+                Text(
+                    text = puppy.resume,
+                    style = typography.body1,
+                    modifier = Modifier.padding(top = 8.dp)
+                )
             }
             Button(
                 onClick = onAdopt,
