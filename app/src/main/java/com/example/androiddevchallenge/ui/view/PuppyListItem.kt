@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.material.Button
 import androidx.compose.material.Card
 import androidx.compose.material.Text
@@ -31,13 +30,11 @@ import com.example.androiddevchallenge.ui.theme.typography
 fun PuppyListItem(puppy: Puppy?, onPuppySelected: (uuid: String) -> Unit) {
     MyTheme {
         Card(
-            modifier = Modifier
-                .fillMaxWidth()
+            modifier = Modifier.fillMaxWidth()
         ) {
-            puppy?.let {
+            puppy?.run {
                 val name = stringResource(id = R.string.puppy_name, puppy.name)
-                val description =
-                    stringResource(id = R.string.puppy_description, puppy.breed, puppy.age)
+                val desc = stringResource(id = R.string.puppy_description, puppy.breed, puppy.age)
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -49,7 +46,6 @@ fun PuppyListItem(puppy: Puppy?, onPuppySelected: (uuid: String) -> Unit) {
                         modifier = Modifier
                             .padding(8.dp)
                             .size(50.dp)
-                            .wrapContentWidth(Alignment.Start)
                     )
                     Row(
                         modifier = Modifier
@@ -65,11 +61,11 @@ fun PuppyListItem(puppy: Puppy?, onPuppySelected: (uuid: String) -> Unit) {
                                 .width(IntrinsicSize.Max)
                         ) {
                             Text(text = name, style = typography.body1)
-                            Text(text = description, style = typography.caption)
+                            Text(text = desc, style = typography.caption)
                         }
                         Box(
                             modifier = Modifier
-                                .weight(1f)
+                                .fillMaxHeight()
                                 .wrapContentSize(Alignment.CenterEnd)
                         ) {
                             Button(
