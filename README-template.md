@@ -2,15 +2,19 @@
 
 <!--- Replace <OWNER> with your Github Username and <REPOSITORY> with the name of your repository. -->
 <!--- You can find both of these in the url bar when you open your repository in github. -->
-![Workflow result](https://github.com/<OWNER>/<REPOSITORY>/workflows/Check/badge.svg)
+![Workflow result](https://github.com/aleweichandt/w1_puppy_adoption/workflows/Check/badge.svg)
 
 
 ## :scroll: Description
-<!--- Describe your app in one or two sentences -->
+Puppies Adoption App for Android developer challenge 2021.
+This app was purely made using jetpack compose.
+App Allows you to check a list of candidate puppies and adopt them!
 
 
 ## :bulb: Motivation and Context
-<!--- Optionally point readers to interesting parts of your submission. -->
+Tried to keep clean architecture by injecting the puppies repository through `LocalComposition`.
+Tried to follow Material guidelines as well.
+This app is using coil for image rendering.
 <!--- What are you especially proud of? -->
 
 

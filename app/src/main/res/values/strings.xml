@@ -13,6 +13,8 @@
     <string name="puppies_list_screen_title">Puppies in adoption</string>
     <string name="welcome">Welcome to the adoption center</string>
     <string name="welcome_body">Here you can find all the puppies awaiting to be taken by someone like you!</string>
+    <string name="empty_puppies">No puppies to adopt at the moment. You should be proud!</string>
+    <string name="puppies_filter_placeholder">Filter by breed</string>
     <string name="puppy_image">%1$s image</string>
     <string name="puppy_description_line_1">Breed: %1$s</string>
     <string name="puppy_description_line_2">Age: %1$s years</string>
