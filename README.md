@@ -1,25 +1,27 @@
-# Put title of your app here
+# Puppy Adoption App
 
-<!--- Replace <OWNER> with your Github Username and <REPOSITORY> with the name of your repository. -->
-<!--- You can find both of these in the url bar when you open your repository in github. -->
 ![Workflow result](https://github.com/aleweichandt/w1_puppy_adoption/workflows/Check/badge.svg)
 
 
 ## :scroll: Description
 Puppies Adoption App for Android developer challenge 2021.
-This app was purely made using jetpack compose.
-App Allows you to check a list of candidate puppies and adopt them!
+
+Purely made using jetpack compose.
+
+Allows you to check a list of candidate puppies and adopt them!
+
+Allows Filtering puppies by breed.
 
 
 ## :bulb: Motivation and Context
-Tried to keep clean architecture by injecting the puppies repository through `LocalComposition`.
-Tried to follow Material guidelines as well.
+Keeps clean architecture by injecting the puppies repository through `LocalComposition`.
+
+Follow Material guidelines.
+
 This app is using coil for image rendering.
-<!--- What are you especially proud of? -->
 
 
 ## :camera_flash: Screenshots
-<!-- You can add more screenshots here if you like -->
 <img src="/results/screenshot_1.png" width="260">&emsp;<img src="/results/screenshot_2.png" width="260">
 
 ## License
